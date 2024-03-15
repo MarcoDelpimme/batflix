@@ -8,6 +8,7 @@ import FilmRow2 from "./Component/FilmsRow2";
 import FilmRow3 from "./Component/FilmsRow3";
 import HeroSection from "./Component/Hero.jsx";
 import EditProfile from "./Component/EditProfile";
+import Account from "./Component/Account";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 
 function App() {
@@ -29,6 +30,10 @@ function App() {
       </div>
       <div>
         <EditProfile />
+      </div>
+
+      <div>
+        <Account />
       </div>
       <div>
         <Footer />
