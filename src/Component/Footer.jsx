@@ -109,7 +109,7 @@ function Footer() {
           </div>
           <div className="row">
             <div className="col mb-2">
-              <button type="button" className=" footerbtn ">
+              <button type="button" className=" footerbtn my-3">
                 Service Code
               </button>
             </div>
