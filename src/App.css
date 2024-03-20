@@ -77,6 +77,21 @@ a {
   transform: scale(1.1);
 }
 
+#commentArea {
+  background-color: #ffffff61;
+  padding-inline: 8px;
+  -webkit-box-shadow: 1px 6px 13px 2px #727272;
+  box-shadow: 1px 6px 13px 2px #000000;
+}
+
+#detailsCard {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(229, 229, 229, 1) 100%);
+  color: white;
+  -webkit-box-shadow: 1px 6px 13px 2px #727272;
+  box-shadow: 1px 6px 13px 2px #727272;
+}
+
 /* _____________________________________________________ */
 
 .mycolormenudrop {

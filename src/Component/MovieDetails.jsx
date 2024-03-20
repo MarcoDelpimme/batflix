@@ -7,6 +7,7 @@ import { Spinner } from "react-bootstrap";
 const MovieDetails = function () {
   const [filmDet, setFilmDet] = useState(null);
   const [comment, setComment] = useState([]);
+  const [showAllComments, setShowAllComments] = useState(false);
   const params = useParams();
   console.log(params);
 
@@ -58,21 +59,31 @@ const MovieDetails = function () {
         </div>
       )}
       {filmDet && (
-        <Card style={{ width: "18rem" }} className="mx-auto">
+        <Card style={{ width: "18rem" }} className="mx-auto" id="detailsCard">
           <Card.Img variant="top" src={filmDet.Poster} />
           <Card.Body>
             <Card.Title>{filmDet.Title}</Card.Title>
             <Card.Text>{filmDet.Plot}</Card.Text>
             <h5>Recensioni del Film</h5>
-            {comment.map((commentObj, index) => (
-              <div key={index} className="bg-dark text-white ">
-                <p>Commento: {commentObj.comment}</p>
-                <p>Autore: {commentObj.author}</p>
+            {comment.slice(0, showAllComments ? comment.length : 4).map((commentObj, index) => (
+              <div key={index} id="commentArea">
+                <h6 className="text-dark">Autore: {commentObj.author}</h6>
+                <p>{commentObj.comment}</p>
               </div>
             ))}
+            {!showAllComments && (
+              <Button variant="secondary" className="mb-2" onClick={() => setShowAllComments(true)}>
+                Mostra altre recensioni
+              </Button>
+            )}
+            <Button variant="success" className="ml-2">
+              Aggiungi Commento
+            </Button>
             <Link to="/">
               {" "}
-              <Button variant="danger">Torna alla home</Button>
+              <Button variant="danger" className="mt-2">
+                Torna alla home
+              </Button>
             </Link>
           </Card.Body>
         </Card>
