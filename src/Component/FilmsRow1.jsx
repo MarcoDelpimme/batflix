@@ -1,40 +1,37 @@
-import { Component } from "react";
+import React, { useState, useEffect } from "react";
 import Row from "react-bootstrap/Row";
+import { Link } from "react-router-dom";
 
-class FilmRow1 extends Component {
-  state = {
-    movieData: [],
-  };
+function FilmRow1() {
+  const [movieData, setMovieData] = useState([]);
 
-  componentDidMount() {
+  useEffect(() => {
     fetch("http://www.omdbapi.com/?apikey=1561c88a&s=harry%20potter")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-        this.setState({ movieData: data });
-        this.setState({ movieData: data.Search.slice(0, 5) });
-        console.log(this.state);
+        setMovieData(data.Search ? data.Search.slice(0, 5) : []);
       })
-      .catch((errore) => {
-        console.log("errore", errore);
+      .catch((error) => {
+        console.log("Errore", error);
       });
-  }
+  }, []);
 
-  render() {
-    const { movieData } = this.state;
-    return (
-      <div className="container text-white mb-4">
-        <h3>Trending Now</h3>
-        <Row>
-          {movieData.map((movie) => (
+  return (
+    <div className="container text-white mb-4">
+      <h3>Trending Now</h3>
+      <Row>
+        {movieData.map((movie) => (
+          <>
             <div className="col mb-2 text-center px-1" key={movie.imdbID}>
-              <img className="img-fluid" src={movie.Poster} alt={movie.Title} />
+              <Link to={"/MovieDetails/" + movie.imdbID}>
+                <img className="img-fluid" src={movie.Poster} alt={movie.Title} />
+              </Link>
             </div>
-          ))}
-        </Row>
-      </div>
-    );
-  }
+          </>
+        ))}
+      </Row>
+    </div>
+  );
 }
 
 export default FilmRow1;

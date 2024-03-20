@@ -3,18 +3,6 @@ import React from "react";
 function EditProfile() {
   return (
     <div className="bg-dark mx-5">
-      {/* <header className="position-sticky top-0" style={{ zIndex: 5 }}>
-        <div className="container-fluid bg-dark">
-          <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
-            <div className="container-fluid">
-              <a className="navbar-brand" href="./index.html">
-                <img src="./assets/netflix_logo.png" alt="" width="100px" />
-              </a>
-            </div>
-          </nav>
-        </div>
-      </header> */}
-
       <div className="container-xs text-white mx-auto my-5" style={{ width: "60%" }}>
         <div className="border-bottom solid border-secondary">
           <h1>Edit Profile</h1>

@@ -17,6 +17,10 @@ footer {
   color: #f5f5f1;
 }
 
+a {
+  text-decoration: none !important;
+}
+
 #button {
   background-color: black;
 }

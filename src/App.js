@@ -10,35 +10,81 @@ import HeroSection from "./Component/Hero.jsx";
 import EditProfile from "./Component/EditProfile";
 import Account from "./Component/Account";
 import "bootstrap/dist/js/bootstrap.bundle.js";
+import { BrowserRouter } from "react-router-dom";
+import { Routes } from "react-router-dom";
+import { Route } from "react-router-dom";
+import TvShows from "./Component/TvShows";
+import MovieDetails from "./Component/MovieDetails.jsx";
 
 function App() {
   return (
-    <>
-      <div className="App">
+    <BrowserRouter>
+      <div>
         <Header />
       </div>
-      <HeroSection />
 
-      <div>
-        <FilmRow1 />
-      </div>
-      <div>
-        <FilmRow2 />
-      </div>
-      <div>
-        <FilmRow3 />
-      </div>
-      <div>
-        <EditProfile />
-      </div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div>
+              {/* <div>
+                <HeroSection />
+              </div> */}
+              <div>
+                <FilmRow1 />
+              </div>
+              <div>
+                <FilmRow2 />
+              </div>
+              <div>
+                <FilmRow3 />
+              </div>
+            </div>
+          }
+        />
 
-      <div>
-        <Account />
-      </div>
+        <Route
+          path="/hero"
+          element={
+            <div>
+              <HeroSection />
+            </div>
+          }
+        />
+        <Route
+          path="/editProfile"
+          element={
+            <div>
+              <EditProfile />
+            </div>
+          }
+        />
+        <Route
+          path="/accountProfile"
+          element={
+            <div>
+              <Account />
+            </div>
+          }
+        />
+
+        <Route path="/MovieDetails/:filmId" element={<MovieDetails />} />
+
+        <Route
+          path="/tvShows"
+          element={
+            <div>
+              {" "}
+              <TvShows />
+            </div>
+          }
+        />
+      </Routes>
       <div>
         <Footer />
       </div>
-    </>
+    </BrowserRouter>
   );
 }
 

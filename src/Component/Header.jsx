@@ -1,4 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import TvShows from "./TvShows";
+import EditProfile from "./EditProfile";
 
 function Navbar() {
   return (
@@ -6,7 +9,7 @@ function Navbar() {
       <div className="container-fluid bg-dark">
         <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
           <div className="container-fluid">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="#1">
               <img src="logo.png" alt="" width="100px" />
             </a>
             <button
@@ -23,14 +26,14 @@ function Navbar() {
             <div className="collapse navbar-collapse" id="navbarNavDropdown">
               <ul className="navbar-nav me-auto">
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
-                    Home
-                  </a>
+                  <Link to="/">
+                    <div className="nav-link">Home</div>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Tv Shows
-                  </a>
+                  <Link to="/TvShows">
+                    <div className="nav-link">Tv Shows</div>
+                  </Link>
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#">
@@ -79,7 +82,7 @@ function Navbar() {
                 <li className="nav-item dropdown" style={{ listStyle: "none" }}>
                   <a
                     className="nav-link dropdown-toggle text-white"
-                    href="#"
+                    href="#1"
                     role="button"
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
@@ -88,14 +91,14 @@ function Navbar() {
                   </a>
                   <ul className="dropdown-menu dropdown-menu-end mycolormenudrop">
                     <li>
-                      <a className="dropdown-item" href="./prifle.html">
-                        Profile settings
-                      </a>
+                      <Link to="/editProfile">
+                        <div className="dropdown-item">Profile settings</div>
+                      </Link>
                     </li>
                     <li>
-                      <a className="dropdown-item" href="#">
-                        Another action
-                      </a>
+                      <Link to="/AccountProfile">
+                        <div className="dropdown-item">Account settings</div>
+                      </Link>
                     </li>
                     <li>
                       <a className="dropdown-item" href="#">

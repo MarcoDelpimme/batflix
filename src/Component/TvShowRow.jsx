@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import Row from "react-bootstrap/Row";
 import { Link } from "react-router-dom";
 
-function FilmRow2() {
+function TvShowsRow() {
   const [movieData, setMovieData] = useState([]);
 
   useEffect(() => {
-    fetch("http://www.omdbapi.com/?apikey=1561c88a&s=avengers")
+    fetch("http://www.omdbapi.com/?apikey=1561c88a&s=Game of thrones")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -19,7 +19,7 @@ function FilmRow2() {
 
   return (
     <div className="container text-white mb-4">
-      <h3>Watch it Again</h3>
+      <h3>Your TV shows</h3>
       <Row>
         {movieData.map((movie) => (
           <div className="col mb-2 text-center px-1" key={movie.imdbID}>
@@ -33,4 +33,4 @@ function FilmRow2() {
   );
 }
 
-export default FilmRow2;
+export default TvShowsRow;
