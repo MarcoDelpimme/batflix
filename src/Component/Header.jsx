@@ -57,7 +57,7 @@ function Navbar() {
                   <input
                     className="form-control"
                     type="search"
-                    placeholder="Search"
+                    placeholder={location.pathname === "/TvShows" ? "cerca serie tv" : "Search"}
                     aria-label="Search"
                     style={{ width: "300px" }}
                   />
