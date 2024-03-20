@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import TvShows from "./TvShows";
-import EditProfile from "./EditProfile";
+import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
+  const location = useLocation();
+  console.log(location);
   return (
     <>
       <div className="container-fluid bg-dark">
@@ -27,12 +27,12 @@ function Navbar() {
               <ul className="navbar-nav me-auto">
                 <li className="nav-item">
                   <Link to="/">
-                    <div className="nav-link">Home</div>
+                    <div className={location.pathname === "/" ? "nav-link active" : "nav-link"}>Home</div>
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link to="/TvShows">
-                    <div className="nav-link">Tv Shows</div>
+                    <div className={location.pathname === "/TvShows" ? "nav-link active" : "nav-link"}>Tv Shows</div>
                   </Link>
                 </li>
                 <li className="nav-item">

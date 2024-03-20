@@ -85,8 +85,8 @@ a {
 }
 
 #detailsCard {
-  background: rgb(0, 0, 0);
-  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(229, 229, 229, 1) 100%);
+  background: rgba(205, 205, 205, 0.322);
+
   color: white;
   -webkit-box-shadow: 1px 6px 13px 2px #727272;
   box-shadow: 1px 6px 13px 2px #727272;
